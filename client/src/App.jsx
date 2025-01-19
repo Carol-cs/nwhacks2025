@@ -8,6 +8,7 @@ import AuthPage from "./pages/auth/AuthPage";
 import AuthRedirect from "./components/routes/AuthRedirect";
 import CommonLayout from "./components/routes/CommonLayout";
 import PrivateRoute from "./components/routes/PrivateRoute";
+import ChatHistoryPage from "./pages/ChatHistoryPage";
 
 function App() {
   return (
@@ -26,9 +27,9 @@ function App() {
         <Route element={<PrivateRoute />}>
           <Route element={<CommonLayout />}>
             <Route path="/" element={<DashboardPage />} />
-            <Route path="/auth" element={<AuthPage />} />
             <Route path="/health-record" element={<HealthRecordPage />} />
             <Route path="/chat" element={<ChatPage />} />
+            <Route path="/chat-history" element={<ChatHistoryPage />} />
           </Route>
         </Route>
       </Routes>

@@ -1,16 +1,15 @@
-import React from "react";
-
 import { useParams, Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
-import TopNavigationBar from "../TopNavigationBar";
+import Sidebar from "../Sidebar";
 
 const CommonLayout = () => {
   return (
-    <div>
-      <TopNavigationBar />
-      <div>
+    <div className="flex min-h-screen bg-gray-50">
+      <Sidebar />
+      <main className="flex-1 p-8 ml-64">
+        {" "}
         <Outlet />
-      </div>
+      </main>
     </div>
   );
 };
