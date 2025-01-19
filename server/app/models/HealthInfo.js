@@ -6,7 +6,7 @@ const HealthInfoSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
-  cateogry: {
+  category: {
     type: String,
     required: true,
   },
