@@ -13,7 +13,7 @@ const DashboardPage = () => {
       </div>
       <nav className="flex justify-start space-x-4">
         <button
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/health-record')}
             className="page-preview-button"
         >
           <h1 className="text-xl font-bold">Monitor Health</h1>
@@ -24,7 +24,7 @@ const DashboardPage = () => {
             onClick={() => navigate('/')}
             className="page-preview-button"
         >
-          <h1 className="text-xl font-bold">Chat with Buddy</h1>
+          <h1 className="text-xl font-bold">Speak with Nova</h1>
           <img></img>
         </button>
       </nav>
