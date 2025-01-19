@@ -1,31 +1,25 @@
 const express = require("express");
-const fetch = require("node-fetch");
 const app = express();
+var cors = require("cors");
+var dotenv = require("dotenv");
+dotenv.config();
+
+var connectDB = require("./config/db");
+
+// Connect to MongoDB
+connectDB();
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Routes
+app.use("/api/users", require("./routes/user"));
+app.use("/api/chatlogs", require("./routes/chatLog"));
+app.use("/api/healthinfos", require("./routes/healthInfo"));
 
 app.get("/", (req, res) => {
   res.json({ status: "ok" });
-});
-
-app.get("/rates", async (req, res) => {
-  const url =
-    "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/avg_interest_rates?page[number]=1&page[size]=10";
-
-  try {
-    const response = await fetch(url, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (!response.ok) {
-      res.json({ status: "error" });
-      return;
-    }
-    const data = await response.json();
-    res.json(data);
-  } catch (err) {
-    console.error(err);
-    res.json({ status: "error" });
-  }
 });
 
 app.listen(3000, "0.0.0.0", () => {
