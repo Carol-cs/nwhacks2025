@@ -7,7 +7,8 @@ import time
 engine = pyttsx3.init()
 
 # Initialize the model using Hugging Face's pipeline
-generator = pipeline('text-generation', model='EleutherAI/gpt-neo-2.7B')
+generator = pipeline('text-generation', model='EleutherAI/gpt-neo-1.3B')
+print("Model loaded successfully!")
 
 # Function to listen to microphone input
 def listen_for_audio():

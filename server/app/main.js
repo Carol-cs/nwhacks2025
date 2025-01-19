@@ -18,6 +18,7 @@ app.use(express.json());
 app.use("/api/users", require("./routes/user"));
 app.use("/api/chatlogs", require("./routes/chatLog"));
 app.use("/api/healthinfos", require("./routes/healthInfo"));
+app.use("/api/chatllm", require("./routes/chatLLM"));
 
 app.get("/", (req, res) => {
   res.json({ status: "ok" });
