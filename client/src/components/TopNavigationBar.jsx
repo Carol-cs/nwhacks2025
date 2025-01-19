@@ -19,20 +19,20 @@ const TopNavigationBar = () => {
                 </button>
                 <nav className="flex space-x-6">
                     <button
-                        className="rounded-button button-width"
+                        className="rounded-button rounded-button-width"
                         onClick={() => navigate('/')}
                     >
                         Home
                     </button>
 
                     <button
-                        className="rounded-button button-width"
+                        className="rounded-button rounded-button-width"
                         onClick={() => navigate('/health-record')}
                     >
                         Health Record
                     </button>
                     <button
-                        className="rounded-button button-width"
+                        className="rounded-button rounded-button-width"
                         onClick={() => navigate('/chat')}
                     >
                         Chat
