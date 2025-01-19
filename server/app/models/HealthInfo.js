@@ -6,11 +6,19 @@ const HealthInfoSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
-  info: {
+  cateogry: {
     type: String,
     required: true,
   },
-  timestamp: {
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  date: {
     type: Date,
     default: Date.now,
   },
