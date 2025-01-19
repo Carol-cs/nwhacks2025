@@ -26,7 +26,7 @@ const AuthPage = () => {
       } else if (payload.authType === "register") {
         response = await register({ email }).unwrap();
       }
-      dispatch(setCredentials(response));
+      dispatch(setCredentials({ ...response, email }));
 
       navigate(from, { replace: true });
     } catch (error) {
