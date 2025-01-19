@@ -56,7 +56,7 @@ const Sidebar = () => {
           }
         >
           <HeartPulse className="w-5 h-5" />
-          <span>Health History</span>
+          <span>Health Record</span>
         </NavLink>
 
         <NavLink

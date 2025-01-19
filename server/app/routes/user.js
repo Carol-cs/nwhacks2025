@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
     await user.save();
 
     const token = generateToken(user._id);
-    res.json({ token });
+    res.json({ token, _id: user._id });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
@@ -32,7 +32,7 @@ router.post("/login", async (req, res) => {
 
     const token = generateToken(user._id);
 
-    res.json({ token });
+    res.json({ token, _id: user._id });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
