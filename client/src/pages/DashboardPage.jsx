@@ -1,17 +1,30 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; 
 
 const DashboardPage = () => {
+  const navigate = useNavigate();
+  
   return (
-    <div>
-      <h1>This is the dashboard page.</h1>
-      <nav>
-        <Link to="/health-record">
-          <button className="rounded bg-gray-300 p-4 w-1/4">Button 1</button>
-        </Link>
-        <Link to="/chat">
-          <button className="rounded bg-gray-300 p-4 w-1/4">Button 2</button>
-        </Link>
+    <div className="flex flex-col items-center">
+      <div className="flex justify-center items-center">
+        <h1>This is the dashboard page.</h1>
+      </div>
+      <nav className="flex justify-start space-x-4">
+        <button
+            onClick={() => navigate('/')}
+            className="page-preview-button"
+        >
+          <h1 className="text-xl font-bold">Monitor Health</h1>
+          <img></img>
+        </button>
+
+        <button
+            onClick={() => navigate('/')}
+            className="page-preview-button"
+        >
+          <h1 className="text-xl font-bold">Chat with Buddy</h1>
+          <img></img>
+        </button>
       </nav>
     </div>
   );
