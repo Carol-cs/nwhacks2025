@@ -21,7 +21,7 @@ const DashboardPage = () => {
         </button>
 
         <button
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/chat')}
             className="page-preview-button"
         >
           <h1 className="text-xl font-bold">Speak with Nova</h1>
