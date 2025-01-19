@@ -6,13 +6,14 @@ const DashboardPage = () => {
   const { data: users, isLoading, error } = useGetUsersQuery();
   return (
     <div>
-      <h1>DashboardPage</h1>
+      <h1>This is the dashboard page.</h1>
       <nav>
-        <ul>
-          <li className="rounded bg-gray-300 p-4 w-1/4">
-            <Link to="/health-record">Go to Health Record</Link>
-          </li>
-        </ul>
+        <Link to="/health-record">
+          <button className="rounded bg-gray-300 p-4 w-1/4">Button 1</button>
+        </Link>
+        <Link to="/chat">
+          <button className="rounded bg-gray-300 p-4 w-1/4">Button 2</button>
+        </Link>
       </nav>
       <h1>All Users</h1>
       {isLoading ? (
