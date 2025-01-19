@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { PassageAuth } from "@passageidentity/passage-react";
 import {
   useRegisterMutation,
@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
 import { setCredentials } from "../../slices/authSlice";
+import backgroundImg from "../../assets/background-image.jpg";
+
 const AuthPage = () => {
   const [register, { isLoading: isRegisterLoading, error: registerError }] =
     useRegisterMutation();
@@ -36,13 +38,16 @@ const AuthPage = () => {
   };
 
   return (
-    <>
+    <div
+      className="flex items-center justify-center min-h-screen bg-cover bg-center"
+      style={{ backgroundImage: `url(${backgroundImg})` }}
+    >
       <PassageAuth onSuccess={onSuccess} />
       {(isRegisterLoading || isLoginLoading) && <p>Loading...</p>}
       {(registerError || loginError) && (
         <p>Error: {registerError?.message || loginError?.message}</p>
       )}
-    </>
+    </div>
   );
 };
 

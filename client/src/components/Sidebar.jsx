@@ -9,6 +9,7 @@ import {
   ChevronUp,
   ChevronDown,
   UserCircle,
+  MessageCircleHeart,
 } from "lucide-react";
 import OldLogo from "./OldLogo";
 import { useNavigate } from "react-router-dom";
@@ -23,10 +24,10 @@ const Sidebar = () => {
   const user = useSelector((state) => state.auth.userInfo);
 
   return (
-    <div className="w-64 bg-white border-r border-gray-200 px-4 py-6 flex flex-col h-screen">
+    <div className="fixed w-64 z-50 bg-white border-r border-gray-200 px-4 py-6 flex flex-col h-full">
       <div className="flex items-center gap-3 mb-8 px-2">
-        <OldLogo />
-        <h1 className="text-xl font-bold text-blue-600">HeartTalk</h1>
+        <MessageCircleHeart className="size-8 text-red-400" />
+        <h1 className="text-xl font-bold text-red-400">HeartTalk</h1>
       </div>
 
       <nav className="space-y-2">
