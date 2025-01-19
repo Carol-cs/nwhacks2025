@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import HeartTalkLogo from "../components/HeartTalkLogo";
+import OldLogo from "../components/OldLogo";
 import profilePhoto from "../images/profile-photo.png";
 import { logout } from "../slices/authSlice";
+import { useDispatch } from "react-redux";
 
 const TopNavigationBar = () => {
   const navigate = useNavigate();
@@ -16,13 +18,16 @@ const TopNavigationBar = () => {
 
   return (
     <div>
-      <div className="flex justify-between items-center p-4 bg-white shadow-md">
+      <div className="flex justify-between items-center p-0 bg-white shadow-md">
+        {/* left-side components*/}
         <button onClick={() => navigate("/")}>
-          <div className="flex items-center space-x-4">
-            <img src={profilePhoto} alt="Logo" className="logo" />
-            <h1 className="text-xl font-bold">SeniorBuddy</h1>
+          <div className="flex items-center space-x-0">
+            {/* <HeartTalkLogo width="250" height="60" /> */}
+            <OldLogo />
+            <h1 className="text-xl font-bold">HeartTalk</h1>
           </div>
         </button>
+        {/* center components */}
         <nav className="flex space-x-6">
           <button
             className="rounded-button rounded-button-width"
@@ -35,16 +40,17 @@ const TopNavigationBar = () => {
             className="rounded-button rounded-button-width"
             onClick={() => navigate("/health-record")}
           >
-            Health Record
+            Health Activity
           </button>
           <button
             className="rounded-button rounded-button-width"
             onClick={() => navigate("/chat")}
           >
-            Chat
+            NovaChat
           </button>
         </nav>
-        <div className="items-center">
+        {/* right-side components */}
+        <div className="items-center p-4">
           <button onClick={() => setShowDropdown(!showDropdown)}>
             <img
               src={profilePhoto}
