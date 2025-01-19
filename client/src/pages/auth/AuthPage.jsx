@@ -39,7 +39,7 @@ const AuthPage = () => {
 
   return (
     <div
-      className="flex items-center justify-center min-h-screen bg-cover bg-center"
+      className="flex items-center flex-col justify-center min-h-screen bg-cover bg-center"
       style={{ backgroundImage: `url(${backgroundImg})` }}
     >
       <PassageAuth onSuccess={onSuccess} />
